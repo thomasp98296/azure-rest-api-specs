@@ -23,6 +23,10 @@ enum Versions {
   @doc("The 2022-12-01 version.")
   @useDependency(Azure.Core.Versions.v1_0_Preview_1)
   v2022_12_01: "2022-12-01",
+
+  @doc("The 2025-09-01-preview version.")
+  @useDependency(Azure.Core.Versions.v1_0_Preview_2)
+  v2025_09_01_Preview: "2025-09-01-preview",
 }
 
 @doc("A widget.")
@@ -38,6 +42,22 @@ model WidgetSuite {
 
   @doc("The faked shared model.")
   sharedModel?: FakedSharedModel;
+
+  @doc("The description of the widget.")
+  @added(Versions.v2025_09_01_Preview)
+  description?: string;
+
+  @doc("The category of the widget.")
+  @added(Versions.v2025_09_01_Preview)
+  category?: string;
+
+  @doc("The date when the widget was last updated.")
+  @added(Versions.v2025_09_01_Preview)
+  lastUpdatedAt?: utcDateTime;
+
+  @doc("Indicates if the widget is active.")
+  @added(Versions.v2025_09_01_Preview)
+  isActive?: boolean;
 }
 
 interface Widgets {
